@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="se2203b.assignments.ifinance.AccountGroupsController">
+   <children>
+      <Label layoutX="168.0" layoutY="32.0" text="Custom Accounts Group Form">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <TreeView fx:id="treeView" layoutX="28.0" layoutY="71.0" prefHeight="301.0" prefWidth="303.0">
+         <contextMenu>
+            <ContextMenu onShowing="#check">
+              <items>
+                <MenuItem fx:id="btnAdd" mnemonicParsing="false" onAction="#unlockSideAdd" text="Add New Group" />
+                  <MenuItem fx:id="btnChange" mnemonicParsing="false" onAction="#unlockSideChange" text="changeBtn" />
+                  <MenuItem fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteGroup" text="deleteBtn" />
+              </items>
+            </ContextMenu>
+         </contextMenu></TreeView>
+      <TitledPane layoutX="344.0" layoutY="71.0" prefHeight="265.0" prefWidth="236.0" text="Add or Change Group Name">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <content>
+            <AnchorPane prefHeight="233.0" prefWidth="234.0">
+               <children>
+                  <Label layoutX="22.0" layoutY="21.0" text="Group Name" />
+                  <TextField fx:id="txtGroupName" layoutX="22.0" layoutY="46.0" prefWidth="189.0" />
+                  <Button fx:id="btnSave" layoutX="164.0" layoutY="112.0" mnemonicParsing="false" onAction="#save" text="Save" />
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+      <Button fx:id="btnExit" layoutX="344.0" layoutY="347.0" mnemonicParsing="false" onAction="#exit" prefHeight="26.0" prefWidth="236.0" text="Exit" />
+   </children>
+</AnchorPane>
